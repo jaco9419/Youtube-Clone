@@ -1,32 +1,36 @@
-import React from 'react';
+import React from "react";
 
-import { Paper, TextField } from '@material-ui/core';
+import { Paper, TextField } from "@material-ui/core";
 
 class SearchBar extends React.Component {
-    state = {
-        searchTerm: '',
-    }
-    // It is not necessary to bind since this refers to the this in the class (arrow functions don't have it)
-    handleChange = (event) => this.setState({ searchTerm: event.target.value, })
-    
-    handleSubmit = (event) => {
-        const { searchTerm } = this.state;
-        const { onFormSubmit } = this.props;
+  state = {
+    searchTerm: "",
+  };
+  // It is not necessary to bind since this refers to the this in the class (arrow functions don't have it)
+  handleChange = (event) => this.setState({ searchTerm: event.target.value });
 
-        onFormSubmit(searchTerm);
+  handleSubmit = (event) => {
+    const { searchTerm } = this.state;
+    const { onFormSubmit } = this.props;
 
-        event.preventDefault();
-    }
+    onFormSubmit(searchTerm);
 
-    render () {
-        return (
-            <Paper elevetion={6} style={{ padding: '25px' }}>
-                <form onSubmit={this.handleSubmit}>
-                    <TextField fullwidth label="Search..." style={{ width: '100%' }} onChange={this.handleChange} />
-                </form>
-            </Paper>
-        )
-    }
+    event.preventDefault();
+  };
+
+  render() {
+    return (
+      <Paper elevetion={6} style={{ padding: "25px" }}>
+        <form onSubmit={this.handleSubmit}>
+          <TextField
+            label="Search..."
+            style={{ width: "100%" }}
+            onChange={this.handleChange}
+          />
+        </form>
+      </Paper>
+    );
+  }
 }
 
 export default SearchBar;
