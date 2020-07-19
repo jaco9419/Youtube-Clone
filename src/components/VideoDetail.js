@@ -2,16 +2,16 @@ import React from "react";
 
 import { Paper, Typography } from "@material-ui/core";
 
-const VideoDetail = ({ video }) => {
-  if (!video) return <div>Loading...</div>;
+const VideoDetail = ({ videos }) => {
+  if (!videos) return <div>Loading...</div>;
 
-  console.log(video.id.videoId);
+  console.log(videos.id.videoId);
 
-  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
+  const videoSrc = `https://www.youtube.com/embed/${videos.id.videoId}`;
 
   return (
     <React.Fragment>
-      <Paper elevation={6} style={{ heigh: "70%" }}>
+      <Paper elevation={6} style={{ height: "30%" }}>
         <iframe
           frameBorder="0"
           height="100%"
@@ -22,12 +22,14 @@ const VideoDetail = ({ video }) => {
       </Paper>
       <Paper elevation={6} style={{ padding: "15px" }}>
         <Typography variant="h4">
-          {video.snippet.title} - {video.snippet.channelTitle}
+          {videos.snippet.title} - {videos.snippet.channelTitle}
         </Typography>
         <Typography variant="subtitle1">
-          {video.snippet.channelTitle}
+          {videos.snippet.channelTitle}
         </Typography>
-        <Typography variant="subtitle2">{video.snippet.description}</Typography>
+        <Typography variant="subtitle2">
+          {videos.snippet.description}
+        </Typography>
       </Paper>
     </React.Fragment>
   );
