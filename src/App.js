@@ -29,7 +29,7 @@ class App extends React.Component {
       params: {
         part: "snippet", //to return our videos
         maxResults: 5,
-        key: "API",
+        key: "AIzaSyBfpJPs3SsvVSRYVDCUNKPTa-b6lV-tsoA",
         // q is default for query in the youtube api
         q: searchTerm,
       },
