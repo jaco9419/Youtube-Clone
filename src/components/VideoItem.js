@@ -4,9 +4,10 @@ import { Grid, Paper, Typography } from "@material-ui/core";
 
 const VideoItem = ({ video, onVideoSelect }) => {
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} >
       <Paper
         style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+        className="video-item"
         onClick={() => onVideoSelect(video)}
       >
         <img

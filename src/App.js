@@ -1,10 +1,8 @@
 import React from "react";
-
 import { Grid } from "@material-ui/core";
-
 import { SearchBar, VideoDetail, VideoList } from "./components";
-
 import youtube from "./api/youtube";
+import logo from "./img/youtube-logo.svg";
 
 class App extends React.Component {
   state = {
@@ -14,7 +12,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.handleSubmit(
-      "Quantum Computers Explained – Limits of Human Technology"
+      "latin america nature videos hd"
     );
   }
 
@@ -46,6 +44,7 @@ class App extends React.Component {
     return (
       <Grid justify="center" container spacing={9}>
         <Grid item xs={12}>
+        <img src={logo} alt="youtube-logo" className="logo"></img>
           <Grid container spacing={3}>
             <Grid item xs={7}>
               <SearchBar onFormSubmit={this.handleSubmit} />
